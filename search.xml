@@ -3,7 +3,10 @@
   <entry>
     <title><![CDATA[博客日志]]></title>
     <url>%2F2018%2F08%2F02%2F%E5%8D%9A%E5%AE%A2%E6%97%A5%E5%BF%97%2F</url>
-    <content type="text"><![CDATA[我的第一篇文章哈哈，今天是个高兴的日子，我在Github上部署了自己的博客，以后要把自己之前总结的资料放到Github上了，这里就是我生活学习的家。]]></content>
+    <content type="text"><![CDATA[我的第一篇文章哈哈，今天是个高兴的日子，我在Github上部署了自己的博客，以后要把自己之前总结的资料放到Github上了，这里就是我生活学习的家。今天根据hexo-theme-next主题，修改了博客的主题设置，添加了一些内容，希望以后能够坚持每天写博客。]]></content>
+      <categories>
+        <category>心情随笔</category>
+      </categories>
       <tags>
         <tag>心情随笔</tag>
       </tags>
