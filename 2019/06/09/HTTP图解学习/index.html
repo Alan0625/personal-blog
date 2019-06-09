@@ -126,7 +126,7 @@
 
 
 
-  <title>D3.js基础 | Alan0625</title>
+  <title>HTTP图解学习 | Alan0625</title>
   
 
 
@@ -298,7 +298,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://alan0625.github.io/2018/08/16/D3-js基础/">
+    <link itemprop="mainEntityOfPage" href="https://alan0625.github.io/2019/06/09/HTTP图解学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alan0625">
@@ -315,7 +315,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">D3.js基础</h1>
+          <h1 class="post-title" itemprop="name headline">HTTP图解学习</h1>
         
 
         <div class="post-meta">
@@ -327,7 +327,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-16T14:01:56+08:00">2018-08-16</time>
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-09T19:18:31+08:00">2019-06-09</time>
             
 
             
@@ -336,28 +336,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/D3/" itemprop="url" rel="index">
-                    <span itemprop="name">D3</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -365,7 +343,7 @@
 
           
           
-             <span id="/2018/08/16/D3-js基础/" class="leancloud_visitors" data-flag-title="D3.js基础">
+             <span id="/2019/06/09/HTTP图解学习/" class="leancloud_visitors" data-flag-title="HTTP图解学习">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -391,7 +369,7 @@
                 
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
-                <span title="字数统计">5.9k</span>
+                <span title="字数统计">6.9k</span>
               
 
               
@@ -405,7 +383,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">6 mins.</span>
+                <span title="阅读时长">7 mins.</span>
               
             </div>
           
@@ -425,98 +403,374 @@
       
 
       
-        <h2 id="D3-js基础用法"><a href="#D3-js基础用法" class="headerlink" title="D3.js基础用法"></a>D3.js基础用法</h2><h3 id="使用-D3-js"><a href="#使用-D3-js" class="headerlink" title="使用 D3.js"></a>使用 D3.js</h3><p>D3.js 是一个 JavaScript 函数库，并不需要通常所说的“安装”。它只有一个文件，在 HTML 中引用即可。有两种方法：</p>
-<p>（1）下载 D3.js 的文件</p>
-<p> d3.zip: <a href="https://github.com/mbostock/d3/releases/download/" target="_blank" rel="noopener">https://github.com/mbostock/d3/releases/download/</a></p>
-<p>解压后，在 HTML 文件中包含相关的 js 文件即可。</p>
-<p>（2）还可以直接包含网络的链接，这种方法较简单：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;http://d3js.org/d3.v3.min.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>但使用的时候要保持网络连接有效，不能再断网的情况下使用。</p>
-<h3 id="开发中需要使用的工具"><a href="#开发中需要使用的工具" class="headerlink" title="开发中需要使用的工具"></a>开发中需要使用的工具</h3><p>记事本软件：Notepad++、Editplus、Sublime Text 等，选择自己喜欢的即可。</p>
-<p>浏览器：IE9 以上、Firefox、Chrome等，推荐用 Chrome</p>
-<p>服务器软件：Apache、Tomcat 等</p>
-<p>其中，服务器软件可能不是必须的，不过 D3 中有些函数需要将 HTML 文件放置于服务器目录下，才能正常使用，关于这点以后会再做说明。</p>
-<h3 id="选择集"><a href="#选择集" class="headerlink" title="选择集"></a>选择集</h3><p>使用 d3.select() 或 d3.selectAll() 选择元素后返回的对象，就是选择集。</p>
-<p>另外，有人会发现，D3 能够连续不断地调用函数，形如：</p>
-<p>d3.select().selectAll().text()。这称为链式语法。</p>
-<h3 id="选择元素"><a href="#选择元素" class="headerlink" title="选择元素"></a>选择元素</h3><p>在 D3 中，用于选择元素的函数有两个：</p>
-<p>d3.select()：是选择所有指定元素的第一个<br>d3.selectAll()：是选择指定元素的全部<br>这两个函数返回的结果称为选择集。</p>
-<h3 id="绑定数据"><a href="#绑定数据" class="headerlink" title="绑定数据"></a>绑定数据</h3><p>D3 中是通过以下两个函数来绑定数据的：</p>
-<p>datum()：绑定一个数据到选择集上<br>data()：绑定一个数组到选择集上，数组的各项值分别与选择集的各元素绑定<br>相对而言，data() 比较常用。</p>
-<p>在上面的代码中，用到了一个无名函数 function(d, i)。当选择集需要使用被绑定的数据时，常需要这么使用。其包含两个参数，其中：</p>
-<p>d 代表数据，也就是与某元素绑定的数据。<br>i 代表索引，代表数据的索引号，从 0 开始。</p>
-<h3 id="选择、插入、删除元素"><a href="#选择、插入、删除元素" class="headerlink" title="选择、插入、删除元素"></a>选择、插入、删除元素</h3><p>选择元素涉及的函数有两个:select 、 selectAll</p>
-<p>关于 select 和 selectAll 的参数，其实是符合 CSS 选择器的条件的，即用“井号（#）”表示 id，用“点（.）”表示 class。</p>
-<p>插入元素涉及的函数有两个：</p>
-<p>append()：在选择集末尾插入元素<br>insert()：在选择集前面插入元素</p>
-<p>删除一个元素时，对于选择的元素，使用 remove 即可.</p>
-<h2 id="绘制一个简单的图表"><a href="#绘制一个简单的图表" class="headerlink" title="绘制一个简单的图表"></a>绘制一个简单的图表</h2><p>HTML 5 提供两种强有力的“画布”：SVG 和 Canvas。</p>
-<h3 id="SVG"><a href="#SVG" class="headerlink" title="SVG"></a>SVG</h3><p>SVG，指可缩放矢量图形（Scalable Vector Graphics），是用于描述二维矢量图形的一种图形格式，是由万维网联盟制定的开放标准。SVG 使用 XML 格式来定义图形，除了 IE8 之前的版本外，绝大部分浏览器都支持 SVG，可将 SVG 文本直接嵌入 HTML 中显示。</p>
-<p>SVG 有如下特点：</p>
-<p>SVG 绘制的是矢量图，因此对图像进行放大不会失真。<br>基于 XML，可以为每个元素添加 JavaScript 事件处理器。<br>每个图形均视为对象，更改对象的属性，图形也会改变。<br>不适合游戏应用。</p>
-<h3 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas"></a>Canvas</h3><p>Canvas 是通过 JavaScript 来绘制 2D 图形，是 HTML 5 中新增的元素。</p>
-<p>Canvas 有如下特点：</p>
-<p>绘制的是位图，图像放大后会失真。<br>不支持事件处理器。<br>能够以 .png 或 .jpg 格式保存图像<br>适合游戏应用</p>
-<h3 id="绘制矩形"><a href="#绘制矩形" class="headerlink" title="绘制矩形"></a>绘制矩形</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var width = 300;  //画布的宽度</span><br><span class="line">var height = 300;   //画布的高度</span><br><span class="line"> </span><br><span class="line">var svg = d3.select(&quot;body&quot;)     //选择文档中的body元素</span><br><span class="line">    .append(&quot;svg&quot;)          //添加一个svg元素</span><br><span class="line">    .attr(&quot;width&quot;, width)       //设定宽度</span><br><span class="line">    .attr(&quot;height&quot;, height);    //设定高度</span><br></pre></td></tr></table></figure>
-<p>上面的 rect 里没有矩形的属性。矩形的属性，常用的有四个：</p>
-<p>x：矩形左上角的 x 坐标<br>y：矩形左上角的 y 坐标<br>width：矩形的宽度<br>height：矩形的高度<br>要注意，在 SVG 中，x 轴的正方向是水平向右，y 轴的正方向是垂直向下的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">svg.selectAll(&quot;rect&quot;)</span><br><span class="line">    .data(dataset)</span><br><span class="line">    .enter()</span><br><span class="line">    .append(&quot;rect&quot;)</span><br><span class="line">    .attr(&quot;x&quot;,20)</span><br><span class="line">    .attr(&quot;y&quot;,function(d,i)&#123;</span><br><span class="line">         return i * rectHeight;</span><br><span class="line">    &#125;)</span><br><span class="line">    .attr(&quot;width&quot;,function(d)&#123;</span><br><span class="line">         return d;</span><br><span class="line">    &#125;)</span><br><span class="line">    .attr(&quot;height&quot;,rectHeight-2)</span><br><span class="line">    .attr(&quot;fill&quot;,&quot;steelblue&quot;);</span><br></pre></td></tr></table></figure>
-<h2 id="比例尺"><a href="#比例尺" class="headerlink" title="比例尺"></a>比例尺</h2><p>将某一区域的值映射到另一区域，其大小关系不变，这就是比例尺（Scale）。</p>
-<p>D3 中的比例尺，也有定义域和值域，分别被称为 domain 和 range。开发者需要指定 domain 和 range 的范围，如此即可得到一个计算关系。</p>
-<h3 id="线性比例尺"><a href="#线性比例尺" class="headerlink" title="线性比例尺"></a>线性比例尺</h3><p>线性比例尺，能将一个连续的区间，映射到另一区间。要解决柱形图宽度的问题，就需要线性比例尺。</p>
-<p>将 dataset 中最小的值，映射成 0；将最大的值，映射成 300。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var min = d3.min(dataset);</span><br><span class="line">var max = d3.max(dataset);</span><br><span class="line"> </span><br><span class="line">var linear = d3.scale.linear()</span><br><span class="line">        .domain([min, max])</span><br><span class="line">        .range([0, 300]);</span><br></pre></td></tr></table></figure>
-<p>d3.scale.linear() 返回一个线性比例尺。domain() 和 range() 分别设定比例尺的定义域和值域。在这里还用到了两个函数，它们经常与比例尺一起出现：</p>
-<p>d3.max()<br>d3.min()<br>这两个函数能够求数组的最大值和最小值.</p>
-<h3 id="序数比例尺"><a href="#序数比例尺" class="headerlink" title="序数比例尺"></a>序数比例尺</h3><p>定义域和值域不一定是连续的，如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var index = [0, 1, 2, 3, 4];</span><br><span class="line">var color = [&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;, &quot;yellow&quot;, &quot;black&quot;];</span><br></pre></td></tr></table></figure>
-<p>这些值都是离散的，线性比例尺不适合，需要用到序数比例尺。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var ordinal = d3.scale.ordinal()</span><br><span class="line">        .domain(index)</span><br><span class="line">        .range(color);</span><br></pre></td></tr></table></figure>
-<h3 id="坐标轴"><a href="#坐标轴" class="headerlink" title="坐标轴"></a>坐标轴</h3><p>在 SVG 画布的预定义元素里，有六种基本图形：</p>
-<p>矩形 <rect></rect><br>圆形 <circle></circle><br>椭圆 <ellipse></ellipse><br>线段 <line></line><br>折线 <polyline></polyline><br>多边形 <polygon></polygon><br>另外，还有一种比较特殊，也是功能最强的元素：</p>
-<p>路径 <path></path><br>画布中的所有图形，都是由以上七种元素组成。</p>
-<p>D3 提供了一个组件：d3.svg.axis()。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//数据</span><br><span class="line">var dataset = [ 2.5 , 2.1 , 1.7 , 1.3 , 0.9 ];</span><br><span class="line">//定义比例尺</span><br><span class="line">var linear = d3.scale.linear()</span><br><span class="line">      .domain([0, d3.max(dataset)])</span><br><span class="line">      .range([0, 250]);</span><br><span class="line"> </span><br><span class="line">var axis = d3.svg.axis()</span><br><span class="line">     .scale(linear)      //指定比例尺</span><br><span class="line">     .orient(&quot;bottom&quot;)   //指定刻度的方向</span><br><span class="line">     .ticks(7);          //指定刻度的数量</span><br></pre></td></tr></table></figure>
-<p>d3.svg.axis()：D3 中坐标轴的组件，能够在 SVG 中生成组成坐标轴的元素。<br>scale()：指定比例尺。<br>orient()：指定刻度的朝向，bottom 表示在坐标轴的下方显示。<br>ticks()：指定刻度的数量。</p>
-<p>通常在添加元素的时候就一并设定，写成如下形式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">svg.append(&quot;g&quot;)</span><br><span class="line">  .attr(&quot;class&quot;,&quot;axis&quot;)</span><br><span class="line">  .attr(&quot;transform&quot;,&quot;translate(20,130)&quot;)</span><br><span class="line">  .call(axis);</span><br></pre></td></tr></table></figure>
-<h3 id="动态图表"><a href="#动态图表" class="headerlink" title="动态图表"></a>动态图表</h3><p>动态的图表，是指图表在某一时间段会发生某种变化，可能是形状、颜色、位置等，而且用户是可以看到变化的过程的。</p>
-<p>D3 提供了 4 个方法用于实现图形的过渡：从状态 A 变为状态 B。</p>
-<p>transition()<br>启动过渡效果。</p>
-<p>其前后是图形变化前后的状态（形状、位置、颜色等等）</p>
-<p>duration()<br>指定过渡的持续时间，单位为毫秒。</p>
-<p>如 duration(2000) ，指持续 2000 毫秒，即 2 秒。</p>
-<p>ease()<br>指定过渡的方式，常用的有：</p>
-<p>linear：普通的线性变化<br>circle：慢慢地到达变换的最终状态<br>elastic：带有弹跳的到达最终状态<br>bounce：在最终状态处弹跳几次<br>调用时，格式形如： ease(“bounce”)。</p>
-<p>delay()<br>指定延迟的时间，表示一定时间后才开始转变，单位同样为毫秒。此函数可以对整体指定延迟，也可以对个别指定延迟。</p>
-<h3 id="理解update-、-enter-、-exit"><a href="#理解update-、-enter-、-exit" class="headerlink" title="理解update 、 enter 、 exit"></a>理解update 、 enter 、 exit</h3><p>当数组的长度与元素数量不一致（数组长度 &gt; 元素数量 or 数组长度 &lt; 元素数量）时,使用此方法可以添加足够的元素或删除多余的元素。</p>
-<p>update 和 enter的使用<br>当对应的元素不足时 （ 绑定数据数量 &gt; 对应元素 ），需要添加元素（append）。</p>
-<p>update 部分的处理办法一般是：更新属性值<br>enter 部分的处理办法一般是：添加元素后，赋予属性值</p>
-<p>Update 和 Exit 的使用</p>
-<p>当对应的元素过多时 （ 绑定数据数量 &lt; 对应元素 ），需要删掉多余的元素。</p>
-<p>exit 部分的处理办法一般是：删除元素（remove）</p>
-<h3 id="交互式操作"><a href="#交互式操作" class="headerlink" title="交互式操作"></a>交互式操作</h3><ol>
-<li>什么是交互<br>交互，指的是用户输入了某种指令，程序接受到指令之后必须做出某种响应。对可视化图表来说，交互能使图表更加生动，能表现更多内容。例如，拖动图表中某些图形、鼠标滑到图形上出现提示框、用触屏放大或缩小图形等等。</li>
+        <h1 id="第一章-了解Web及网路基础"><a href="#第一章-了解Web及网路基础" class="headerlink" title="第一章 了解Web及网路基础"></a>第一章 了解Web及网路基础</h1><h2 id="1-1-使用HTTP协议访问Web"><a href="#1-1-使用HTTP协议访问Web" class="headerlink" title="1.1 使用HTTP协议访问Web"></a>1.1 使用HTTP协议访问Web</h2><ul>
+<li><p>像这种通过发送请求获取服务器资源的web浏览器等，都可称为客户端。</p>
+</li>
+<li><p>HTTP (HyperText Transfer Protocol) 超文本传输协议</p>
+</li>
+<li><p>WWW的3项构建技术:</p>
+<ul>
+<li>HTML(HyperText Markup Language) 超文本标记语言</li>
+<li>HTTP(HyperText Transfer Protocol) 超文本传输协议</li>
+<li>URL(Uniform Resource Locator) 统一资源定位符</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-2-HTTP的诞生"><a href="#1-2-HTTP的诞生" class="headerlink" title="1.2 HTTP的诞生"></a>1.2 HTTP的诞生</h2><hr>
+<ul>
+<li>1996/5  HTTP/1.0  RFC1945</li>
+<li>1997/1  HTTP/1.1  RFC2068 -&gt; RFC2616， 目前主流的HTTP协议版本</li>
+<li>2013/8  HTTP/2.0  正在制定中</li>
+</ul>
+<h2 id="1-3-网络基础TCP-IP"><a href="#1-3-网络基础TCP-IP" class="headerlink" title="1.3 网络基础TCP/IP"></a>1.3 网络基础TCP/IP</h2><ul>
+<li><p>像这种把与互联网相关联的协议集合起来总称为TCP/IP.</p>
+</li>
+<li><p>TCP/IP 分为四层：</p>
+<ul>
+<li>应用层： 决定了向用户提供应用服务时通信的活动。<br>（FTP(File Transfer Protocol，文件传输协议 )、 HTTP(HyperText Transfer Protocol)  、DNS(Domain Name System，域名系统))</li>
+<li>传输层： 对上层应用层，提供处于网络连接中的两台计算机之间的数据传输。<br>(TCP(Transmission Control Protocol, 传输控制协议)， UDP(User Data Protocol, 用户数据报协议))</li>
+<li>网络层： 处理在网络上流动的数据包。数据包是网络传输的最小的数据单位。<br>(IP（Internet Protocol）, 网际协议)</li>
+<li>数据链路层： 用来处理连接网络的硬件部分。包括操作系统，硬件的设备驱动，网卡，及光纤等。硬件上的范畴均在数据链路层的作用范围之内。</li>
+</ul>
+</li>
+<li><p>TCP/IP 通信传输流</p>
+<ul>
+<li>利用TCP/IP协议族进行通信时，会通过分层顺序与对方进行通信，客户端从应用层往下走，服务端往应用层往上走。</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-4-与HTTP关系密切的协议：-IP-、TCP-、DNS"><a href="#1-4-与HTTP关系密切的协议：-IP-、TCP-、DNS" class="headerlink" title="1.4 与HTTP关系密切的协议： IP 、TCP 、DNS"></a>1.4 与HTTP关系密切的协议： IP 、TCP 、DNS</h2><ul>
+<li>IP（Internet Protocol）, 网际协议,位于网络层， 作用是把各种数据包传送给对方。<br>保证数据准确传送到对方那里，需要确定IP地址和MAC地址<br>IP地址(节点被分配到的地址，可变换)、 MAC地址(网卡所属的固定的地址，基本上不会更改)。</li>
+</ul>
+<ul>
+<li>ARP协议(Address Resolution Protocol)<br>是一种用以解析地址的协议，根据通信方的IP地址就可以反查出对应的MAC地址。</li>
+</ul>
+<ul>
+<li><p>TCP 提供可靠的字节流服务。TCP位于传输层<br>TCP协议采用了三次握手策略，确保数据能到达目标。</p>
+<p>握手的过程中使用了TCP的标志——SYN(synchronize)和ACK(acknowledgement).</p>
+<p>三次握手的过程：</p>
+<ol>
+<li>客户端首先发送一个带SYN标志的数据包给服务端；</li>
+<li>服务端收到后，回传一个带有SYN/ACK标志的数据包来表示已经成功收到数据信息；</li>
+<li>最后，客户端再会传一个带ACK标志的数据包，代表握手结束。</li>
 </ol>
-<p>用户用于交互的工具一般有三种：鼠标、键盘、触屏。</p>
-<p>在 D3 中，每一个选择集都有 on() 函数，用于添加事件监听器。</p>
-<p>on() 的第一个参数是监听的事件，第二个参数是监听到事件后响应的内容，第二个参数是一个函数。</p>
-<p>鼠标常用的事件有：</p>
-<p>click：鼠标单击某元素时，相当于 mousedown 和 mouseup 组合在一起。<br>mouseover：光标放在某元素上。<br>mouseout：光标从某元素上移出来时。<br>mousemove：鼠标被移动的时候。<br>mousedown：鼠标按钮被按下。<br>mouseup：鼠标按钮被松开。<br>dblclick：鼠标双击。<br>键盘常用的事件有三个：</p>
-<p>keydown：当用户按下任意键时触发，按住不放会重复触发此事件。该事件不会区分字母的大小写，例如“A”和“a”被视为一致。<br>keypress：当用户按下字符键（大小写字母、数字、加号、等号、回车等）时触发，按住不放会重复触发此事件。该事件区分字母的大小写。<br>keyup：当用户释放键时触发，不区分字母的大小写。<br>触屏常用的事件有三个：</p>
-<p>touchstart：当触摸点被放在触摸屏上时。<br>touchmove：当触摸点在触摸屏上移动时。<br>touchend：当触摸点从触摸屏上拿开时。<br>当某个事件被监听到时，D3 会把当前的事件存到 d3.event 对象，里面保存了当前事件的各种参数，请大家好好参详。如果需要监听到事件后立刻输出该事件，可以添加一行代码：</p>
-<p>circle.on(“click”, function(){<br>    console.log(d3.event);<br>});</p>
-<p>监听器函数中都使用了 d3.select(this)，表示选择当前的元素，this 是当前的元素，要改变响应事件的元素时这么写就好。</p>
-<h3 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h3><p>选择 D3：如果希望开发脑海中任意想象到的图表。<br>选择 Highcharts、Echarts 等：如果希望开发几种固定种类的、十分大众化的图表。</p>
-<p>布局的作用是：将不适合用于绘图的数据转换成了适合用于绘图的数据。</p>
-<p>布局的作用解释成：数据转换。</p>
-<p>D3 总共提供了 12 个布局：饼状图（Pie）、力导向图（Force）、弦图（Chord）、树状图（Tree）、集群图（Cluster）、捆图（Bundle）、打包图（Pack）、直方图（Histogram）、分区图（Partition）、堆栈图（Stack）、矩阵树图（Treemap）、层级图（Hierarchy）。</p>
-<p>12 个布局中，层级图（Hierarchy）不能直接使用。集群图、打包图、分区图、树状图、矩阵树图是由层级图扩展来的。如此一来，能够使用的布局是 11 个（有 5 个是由层级图扩展而来）。这些布局的作用都是将某种数据转换成另一种数据，而转换后的数据是利于可视化的。</p>
-<p>布局不是要直接绘图，而是为了得到绘图所需的数据。</p>
-<h3 id="饼状图"><a href="#饼状图" class="headerlink" title="饼状图"></a>饼状图</h3><p>定义一个布局，</p>
-<p>var pie = d3.layout.pie();</p>
-<p>返回值赋给变量 pie，此时 pie 可以当做函数使用。</p>
-<p>var piedata = pie(dataset);</p>
+</li>
+</ul>
+<ul>
+<li>DNS（Domain Name System）域名解析系统，位于应用层<br>提供域名到IP地址之间的解析服务。DNS协议提供通过域名查找IP地址，或逆向从IP地址反查域名的服务。</li>
+</ul>
+<ul>
+<li>URI (Uniform Resource Identifier,统一资源标识符) URI用字符串标识某一互联网资源。</li>
+<li>URL (Uniform Resource Locator，统一资源定位符)</li>
+</ul>
+<h1 id="第二章-简单的HTTP协议"><a href="#第二章-简单的HTTP协议" class="headerlink" title="第二章 简单的HTTP协议"></a>第二章 简单的HTTP协议</h1><h2 id="2-1-HTTP协议用于客户端和服务器端之间的通信"><a href="#2-1-HTTP协议用于客户端和服务器端之间的通信" class="headerlink" title="2.1 HTTP协议用于客户端和服务器端之间的通信"></a>2.1 HTTP协议用于客户端和服务器端之间的通信</h2><ul>
+<li><p>请求访问文本或图像等资源的一端称为客户端，而提供资源响应的一端称为服务器端。</p>
+</li>
+<li><p>HTTP协议规定，请求从客户端发出，最后服务器端响应该请求并返回。</p>
+</li>
+<li><p>请求报文是由请求方法、请求URI、协议版本、可选的请求首部字段和内容实体构成。</p>
+</li>
+<li><p>响应报文基本上是由协议版本、状态码、用以解释状态码的原因短语、可选的响应首部字段以及实体主体构成。</p>
+</li>
+<li><p>HTTP是不保存状态的协议，自身不对请求和响应之间的通信状态进行保存。目的是为了更快地处理大量的事务，确保协议的可伸缩性。使用Cookie技术管理状态。</p>
+</li>
+<li><p>HTTP方法</p>
+<ul>
+<li>1、GET 获取资源，用来请求访问已被URI识别的资源。</li>
+<li>2、POST 传输实体主体</li>
+<li>3、PUT 传输文件，自身不带验证机制，安全性存在问题</li>
+<li>4、HEAD 获得报文首部，只是不返回报文主体部分。用于确认URI的有效性及资源更新的日期时间等。</li>
+<li>5、DELETE 删除文件， 自身不带验证机制，安全性存在问题</li>
+<li>6、OPTIONS 用来查询针对请求URI指定的资源支持的方法。</li>
+<li>7、TRACE 追踪路径，让Web服务器将之前的请求通信环回给客户端的方法。容易受到XSS攻击</li>
+<li>8、CONNECT 用隧道协议连接代理<br>  要求在与代理服务器通信时建立隧道，实现用隧道协议进行TCP通信。主要使用SSL(Secure Socket Layer, 安全套接层)和TLS(Transport Layer Security, 传输层安全)协议把安全内容加密后经网络隧道传输。</li>
+</ul>
+</li>
+<li><p>持久连接<br>HTTP keep-alive 只要任意一端没有明确提出断开连接，则保持TCP连接状态。</p>
+<p>持久连接的好处在于减少了TCP连接的重复建立和断开所造成的额外开销，减轻了服务器端的负载。同时提高Web页面的显示速度。</p>
+<p>HTTP/1.1中，所有的连接默认都是持久连接，在HTTP/1.0中并未标准化</p>
+</li>
+<li><p>管线化<br>持久连接使得多数请求以管线化方式发送成为可能。可以同时并行发送多个请求</p>
+</li>
+<li><p>使用Cookie的状态管理<br>Cookie通过在请求和响应报文中写入Cookie信息来控制客户端的转态。</p>
+<p>Cookie会根据从服务器端发送的响应报文内的一个叫做Set-Cookie的首部字段信息，通知客户端保存Cookie。当下次客户端再往该服务器发送请求时，<br>客户端会自动在请求报文中加入Cookie值后发送出去。</p>
+<p>服务器端发现客户端发送过来的Cookie后，会去检查究竟是去哪一个客户端发来的连接请求，然后对比服务器上的记录，最后得到之前的状态信息。</p>
+</li>
+</ul>
+<h1 id="第三章-HTTP报文内的HTTP信息"><a href="#第三章-HTTP报文内的HTTP信息" class="headerlink" title="第三章 HTTP报文内的HTTP信息"></a>第三章 HTTP报文内的HTTP信息</h1><h2 id="3-1-HTTP报文"><a href="#3-1-HTTP报文" class="headerlink" title="3.1 HTTP报文"></a>3.1 HTTP报文</h2><ul>
+<li>用于HTTP协议交互的信息被称为HTTP报文。</li>
+<li>客户端的HTTP报文叫做请求报文，服务端的叫做响应报文。</li>
+<li>HTTP报文本身是由多行（用CR+LF作换行符）数据构成的字符串文本</li>
+<li><p>HTTP报文大致可分为报文首部和报文主体两块。两者由最初出现的空行(CR+LF)来划分。</p>
+<ul>
+<li>CR : 回车符，16进制 0x0d</li>
+<li>LF: 换行符，16进制 0x0a</li>
+</ul>
+</li>
+<li><p>报文首部： 服务器端或客户端需要处理的请求或响应的内容及属性</p>
+</li>
+<li><p>报文主体： 应被发送的数据</p>
+</li>
+<li><p>请求报文/响应报文  报文首部 + 空行 + 报文主体  </p>
+</li>
+<li><p>请求报文： 请求行 + 请求首部字段 + 通用首部字段 + 实体首部字段 + 其他</p>
+</li>
+<li>响应报文： 状态行 + 响应首部字段 + 通用首部字段 + 实体首部字段 + 其他</li>
+</ul>
+<h2 id="3-2-编码提升传输速率"><a href="#3-2-编码提升传输速率" class="headerlink" title="3.2 编码提升传输速率"></a>3.2 编码提升传输速率</h2><ul>
+<li>报文 是HTTP通信中的基本单位，由8位组字节流组成，通过HTTP通信传输。</li>
+<li><p>实体 作为请求或响应的有效载荷数据被传输，其内容由实体首部和实体主体组成。</p>
+</li>
+<li><p>HTTP报文的主体用于传输请求或响应的实体主体。</p>
+</li>
+<li><p>HTTP中常用的内容编码有以下几种：</p>
+<ul>
+<li>gzip(GNU zip)</li>
+<li>compress (UNIX系统的标准压缩)</li>
+<li>deflate (zlib)</li>
+<li>identity (不进行编码)</li>
+</ul>
+</li>
+<li><p>分块传输编码</p>
+</li>
+</ul>
+<h2 id="3-3-获取部分内容的范围请求"><a href="#3-3-获取部分内容的范围请求" class="headerlink" title="3.3 获取部分内容的范围请求"></a>3.3 获取部分内容的范围请求</h2><ul>
+<li>范围请求： Range Request, 执行范围请求时，会用到首部字段Range来指定资源byte范围。</li>
+</ul>
+<h2 id="3-4-内容协商返回最合适的内容"><a href="#3-4-内容协商返回最合适的内容" class="headerlink" title="3.4 内容协商返回最合适的内容"></a>3.4 内容协商返回最合适的内容</h2><ul>
+<li>内容协商有三种类型<ol>
+<li>服务器驱动协商</li>
+<li>客户端驱动协商</li>
+<li>透明协商</li>
+</ol>
+</li>
+</ul>
+<h1 id="第四章-返回结果的HTTP状态码"><a href="#第四章-返回结果的HTTP状态码" class="headerlink" title="第四章 返回结果的HTTP状态码"></a>第四章 返回结果的HTTP状态码</h1><h2 id="4-1-状态码告知从服务器端返回的请求结果"><a href="#4-1-状态码告知从服务器端返回的请求结果" class="headerlink" title="4.1 状态码告知从服务器端返回的请求结果"></a>4.1 状态码告知从服务器端返回的请求结果</h2><ul>
+<li><p>状态码</p>
+<ul>
+<li>200 表示从客户端发来的请求在服务器端被正常处理了</li>
+<li>204 表示服务器接收的请求已成功处理，但在返回的响应报文中不含实体的主体部分。</li>
+<li><p>206 表示客户端进行了范围请求，而服务器成功执行了这部分的请求。响应报文中包含由Content-Range指定范围的实体内容。</p>
+</li>
+<li><p>301 永久性重定向， 表示请求的资源已被分配了新的URI，以后应使用资源现在所指的URI.</p>
+</li>
+<li>302 临时重定向，表示请求的资源已被分配了新的URI,希望用户能使用新的URI访问。</li>
+<li>303 表示由于请求对应的资源存在着另一个URI,应使用Get方法定向获取请求的资源。</li>
+<li>304 客户端发送附带条件的请求时，服务器允许请求访问资源，但未满足条件的情况。</li>
+<li><p>307 临时重定向，不会从POST变成GET.</p>
+</li>
+<li><p>400 表示请求报文中存在语法错误。</p>
+</li>
+<li>401 表示发送的请求需要有通过HTTP认证的认证信息。</li>
+<li>403 表示请求资源的访问被服务器拒绝了。</li>
+<li><p>404 表示服务器上无法找到请求的资源</p>
+</li>
+<li><p>500 表示服务器在执行请求时发生了错误</p>
+</li>
+<li>503 表明服务器暂时处于维护状态，无法处理请求。</li>
+</ul>
+</li>
+</ul>
+<h1 id="第五章-与HTTP协作的Web服务器"><a href="#第五章-与HTTP协作的Web服务器" class="headerlink" title="第五章 与HTTP协作的Web服务器"></a>第五章 与HTTP协作的Web服务器</h1><h2 id="5-1-用单台虚拟主机实现多个域名"><a href="#5-1-用单台虚拟主机实现多个域名" class="headerlink" title="5.1 用单台虚拟主机实现多个域名"></a>5.1 用单台虚拟主机实现多个域名</h2><ul>
+<li>HTTP/1.1规范允许一台HTTP服务器搭建多个Web站点</li>
+<li>在互联网上，域名通过DNS服务映射到IP地址之后的目标网站。</li>
+</ul>
+<h2 id="5-2-代理、网关、隧道"><a href="#5-2-代理、网关、隧道" class="headerlink" title="5.2 代理、网关、隧道"></a>5.2 代理、网关、隧道</h2><ul>
+<li><p>这些应用程序和服务器可以将请求转发给通信线路上的下一站服务器，并且能接收从那台服务器发送的响应在转发给客户端。</p>
+</li>
+<li><p>代理： 是一种有转发功能的应用程序，接收由客户端发送的请求并转发给服务器，同事也接收服务器返回的响应并转发给客户端。</p>
+<ul>
+<li><p>代理不改变请求URI,会直接发送给前方持有资源的目标服务器。</p>
+</li>
+<li><p>理由： 利用缓存技术减少网络带宽的流量，组织内部针对特定网站的访问控制，以获取访问日志为主要目的。</p>
+</li>
+<li>缓存代理：代理转发响应时，缓存代理会预先将资源的副本保存在代理服务器上，当代理再次接收到相同的资源请求时，就可以不从源服务器那里获取资源，而将之前缓存的资源作为响应返回。</li>
+<li>透明代理：转发请求或响应时，不对报文做任何的加工的代理类型称为透明代理，反之称为非透明代理。</li>
+</ul>
+</li>
+<li><p>网关： 是转发其他服务器通信数据的服务器。</p>
+<ul>
+<li>提高通信的安全性，可以在客户端和网关之间的通信线路上加密以确保连接的安全</li>
+</ul>
+</li>
+<li><p>隧道： 是在相隔甚远的客户端和服务器两者之间进行中转，并保持双方通信连接的应用程序。</p>
+<ul>
+<li>使用SSL等手段进行加密通信，确保客户端能与服务器进行安全的通信。</li>
+</ul>
+</li>
+</ul>
+<h2 id="5-3-保存资源的缓存"><a href="#5-3-保存资源的缓存" class="headerlink" title="5.3 保存资源的缓存"></a>5.3 保存资源的缓存</h2><ul>
+<li>缓存是指代理服务器或客户端本地磁盘内保存的资源副本。利用缓存可以减少对服务器的访问，因此也就节省了通信流量和通信时间。</li>
+</ul>
+<h2 id="第六章-HTTP首部"><a href="#第六章-HTTP首部" class="headerlink" title="第六章 HTTP首部"></a>第六章 HTTP首部</h2><ul>
+<li><p>HTTP报文首部</p>
+<ul>
+<li>HTTP请求报文: 由方法、URI、HTTP版本、HTTP首部字段等部分构成</li>
+<li>HTTP响应报文: 由状态码(数字和原因短语)、HTTP版本、HTTP首部字段等部分构成</li>
+</ul>
+</li>
+<li><p>HTTP 首部字段<br>HTTP首部字段是由首部字段名和字段值构成的，中间用冒号“:”分隔。</p>
+</li>
+<li><p>HTTP/1.1 通用首部字段</p>
+<ul>
+<li>Cache-Control: 操作缓存的工作</li>
+<li>Connection: 控制不再转发给代理的首部字段，管理持久连接， keep-alive</li>
+<li>Date: 表明创建HTTP报文的日期和时间</li>
+<li>Transfer-Encoding: 规定了传输保温主体时采用的编码方式</li>
+<li>Upgrade: 用于检测HTTP协议及其他协议是否可使用更高的版本进行通信</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>请求首部字段</p>
+<ul>
+<li>Accept</li>
+<li>Accept-Charset</li>
+<li>Accept-Encoding</li>
+<li>Accept-Language</li>
+<li>Authorization</li>
+<li>Expect</li>
+<li>If-Match</li>
+<li>If-Modified-Since</li>
+<li>If-None-Match</li>
+<li>If-Range</li>
+<li>If-Unmodified-Since</li>
+<li>Max-Forwards</li>
+<li>Range</li>
+<li>Refer</li>
+<li>User-Agent</li>
+</ul>
+</li>
+<li><p>响应首部字段</p>
+<ul>
+<li>Accept-Ranges</li>
+<li>Age</li>
+<li>ETag</li>
+</ul>
+</li>
+<li><p>实体首部字段</p>
+<ul>
+<li>Allow</li>
+<li>Connect-Encoding</li>
+<li>Connect-Language</li>
+<li>Connect-Length</li>
+<li>Connect-Location</li>
+<li>Connect-Range</li>
+<li>Connect-Type</li>
+<li>Expires</li>
+<li>Last-Modified</li>
+</ul>
+</li>
+</ul>
+<h1 id="第七章-确保安全的HTTPS"><a href="#第七章-确保安全的HTTPS" class="headerlink" title="第七章 确保安全的HTTPS"></a>第七章 确保安全的HTTPS</h1><h2 id="7-1-HTTP的缺点"><a href="#7-1-HTTP的缺点" class="headerlink" title="7.1 HTTP的缺点"></a>7.1 HTTP的缺点</h2><ul>
+<li><ol>
+<li>通信使用明文（不加密），内容可能会被窃听</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>不验证通信方的身份，因此有可能遭遇伪装</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>无法证明报文的完整性，所以有可能已遭篡改</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>通信加密<ul>
+<li>HTTP协议中没有加密机制，但可以通过和SSL(Secure Socket Layer)或TLS(Transfer Layer Security)的组合使用，加密HTTP的通信内容。</li>
+<li>与SSL组合使用的HTTP被称为HTTPS(HTTP Secure) 或 HTTP over SSL。SSL不仅提供了加密处理，而且还使用了一种被称为证书的手段，可用于确定通信方。</li>
+</ul>
+</li>
+</ul>
+<h2 id="7-2-HTTPS-HTTP-加密-认证-完整性保护"><a href="#7-2-HTTPS-HTTP-加密-认证-完整性保护" class="headerlink" title="7.2 HTTPS = HTTP + 加密 + 认证 + 完整性保护"></a>7.2 HTTPS = HTTP + 加密 + 认证 + 完整性保护</h2><ul>
+<li><p>把添加了加密及认证机制的HTTP称为HTTPS。HTTPS是HTTP通信接口部分用SSL和TLS协议代替而已。HTTPS就是身披SSL协议这层外壳的HTTP。</p>
+</li>
+<li><p>SSL采用公开密钥加密的加密处理方式。</p>
+</li>
+<li><p>加密和解密同用一个密钥的方式为共享密钥加密，也叫对称密钥加密，不安全。</p>
+</li>
+<li><p>公开密钥加密采用一对非对称的密钥，一把叫私有密钥，另一把叫公开密钥。</p>
+</li>
+<li><p>使用公开密钥加密方式，发送密文的一方使用对方的公开密钥进行加密处理，对方收到被加密的信息后，在使用自己的私有密钥进行解密。利用这种方式，不需要发送用来<br>解密的私有密钥，也不必担心密钥被攻击者窃听而盗走。</p>
+</li>
+<li><p>HTTPS采用共享密钥加密和公开密钥加密两者并用的混合加密机制。公开密钥加密与对称密钥加密相比，其处理速度要慢，公开密钥加密处理起来比对称密钥加密方式更为<br>复杂，效率低。</p>
+</li>
+<li><p>在交换密钥环节使用公开密钥加密方式，之后建立通信交换报文阶段则使用共享密钥加密方式。</p>
+</li>
+<li><p>保证公开密钥正确性的证书—-CA(数字证书认证机构)</p>
+</li>
+<li><p>HTTPS的安全通行机制<br>SSL的慢分两种。一种是指通信慢，另一种是指由于大量消耗CPU及内存等资源，导致处理速度慢。</p>
+</li>
+</ul>
+<h2 id="第八章-确认访问用户身份的认证"><a href="#第八章-确认访问用户身份的认证" class="headerlink" title="第八章  确认访问用户身份的认证"></a>第八章  确认访问用户身份的认证</h2><ul>
+<li><p>HTTP使用的认证方式</p>
+<ul>
+<li>BASIC认证（基本认证)</li>
+<li>DIGEST认证（摘要认证）</li>
+<li>SSL 客户端认证</li>
+<li>FormBase认证（基于表单认证)</li>
+</ul>
+</li>
+<li><p>使用Cookie来管理Session</p>
+</li>
+<li><p>加盐的方式加密信息</p>
+</li>
+</ul>
+<h2 id="第九章-基于HTTP的功能追加协议"><a href="#第九章-基于HTTP的功能追加协议" class="headerlink" title="第九章 基于HTTP的功能追加协议"></a>第九章 基于HTTP的功能追加协议</h2><ul>
+<li>消除HTTP瓶颈的SPDY<br>目的是解决HTTP的性能瓶颈，缩短Web页面的加载时间<br>Ajax 局部刷新<br>Comet 服务端推送<br>SPDY  在应用层与运输层之间通过新加回话层的形式运作。同时，SPDY规定通信中使用SSL。<br>SPDY协议是Google开发的基于TCP的应用层协议，用以最小化网络延迟，提升网络速度，优化用户的网络使用体验。</li>
+<li><p>SPDY的好处</p>
+<ul>
+<li>多路复用流</li>
+<li>赋予请求优先级</li>
+<li>压缩HTTP首部</li>
+<li>推送功能</li>
+<li>服务器提示功能</li>
+</ul>
+</li>
+<li><p>使用浏览器进行全双工通信的 WebSocket<br>WebSocket协议的主要特点</p>
+<ul>
+<li>推送功能，支持由服务器向客户端推送数据的推送功能</li>
+<li>减少通信量</li>
+<li>握手请求 （Upgrade)</li>
+<li>握手响应 </li>
+</ul>
+</li>
+<li><p>HTTP/2.0  (目标是改善用户在使用Web时的速度体验)<br>提升：</p>
+<ul>
+<li>HTTP/2.0采用二进制格式而非文本格式</li>
+<li>HTTP/2.0是完全多路复用的，而非有序并阻塞的(只需一个连接即可实现并行)</li>
+<li>使用报头压缩，HTTP/2.0降低了开销</li>
+<li>HTTP/2.0让服务器可以将响应主动“推送”到客户端缓存中</li>
+<li>流量控制</li>
+</ul>
+</li>
+</ul>
+<h2 id="第十章-构建Web内容的技术"><a href="#第十章-构建Web内容的技术" class="headerlink" title="第十章 构建Web内容的技术"></a>第十章 构建Web内容的技术</h2><ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>DOM</li>
+<li>CGI(Common Gateway Interface, 通用网关接口)</li>
+<li>Servlet</li>
+<li>XML</li>
+<li>RSS(简易信息聚合)</li>
+<li>JSON</li>
+</ul>
+<h2 id="第十一章-Web的攻击技术"><a href="#第十一章-Web的攻击技术" class="headerlink" title="第十一章 Web的攻击技术"></a>第十一章 Web的攻击技术</h2><ul>
+<li>SQL注入攻击</li>
+<li>OS命令注入攻击</li>
+<li>客户端的验证</li>
+<li>XSS（跨站脚本攻击）XSS是攻击者利用预先设置的陷阱触发的被动攻击（窃取客户的Cookie的信息）</li>
+<li>CSRF(跨站点强求伪造)</li>
+<li>密码破解<ul>
+<li>通过网络进行密码试错（穷举法、 字典攻击)</li>
+<li>已加密密码的破解(通过穷举法、字典攻击 、 彩虹表 、 拿到密钥、 加密算法漏洞)</li>
+</ul>
+</li>
+<li>点击劫持</li>
+<li>DOS攻击</li>
+<li>后门程序</li>
+</ul>
 
       
     </div>
@@ -561,7 +815,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://alan0625.github.io/2018/08/16/D3-js基础/" title="D3.js基础">https://alan0625.github.io/2018/08/16/D3-js基础/</a>
+    <a href="https://alan0625.github.io/2019/06/09/HTTP图解学习/" title="HTTP图解学习">https://alan0625.github.io/2019/06/09/HTTP图解学习/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -574,12 +828,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/D3/" <i class="fa fa-tag"></i> D3</a>
-          
-        </div>
-      
 
       
       
@@ -589,8 +837,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/09/D3-js简介/" rel="next" title="D3.js简介">
-                <i class="fa fa-chevron-left"></i> D3.js简介
+              <a href="/2018/08/16/D3-js基础/" rel="next" title="D3.js基础">
+                <i class="fa fa-chevron-left"></i> D3.js基础
               </a>
             
           </div>
@@ -598,10 +846,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/09/HTTP图解学习/" rel="prev" title="HTTP图解学习">
-                HTTP图解学习 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -813,7 +1057,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#D3-js基础用法"><span class="nav-number">1.</span> <span class="nav-text">D3.js基础用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-D3-js"><span class="nav-number">1.1.</span> <span class="nav-text">使用 D3.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发中需要使用的工具"><span class="nav-number">1.2.</span> <span class="nav-text">开发中需要使用的工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择集"><span class="nav-number">1.3.</span> <span class="nav-text">选择集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择元素"><span class="nav-number">1.4.</span> <span class="nav-text">选择元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定数据"><span class="nav-number">1.5.</span> <span class="nav-text">绑定数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择、插入、删除元素"><span class="nav-number">1.6.</span> <span class="nav-text">选择、插入、删除元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绘制一个简单的图表"><span class="nav-number">2.</span> <span class="nav-text">绘制一个简单的图表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SVG"><span class="nav-number">2.1.</span> <span class="nav-text">SVG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Canvas"><span class="nav-number">2.2.</span> <span class="nav-text">Canvas</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制矩形"><span class="nav-number">2.3.</span> <span class="nav-text">绘制矩形</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#比例尺"><span class="nav-number">3.</span> <span class="nav-text">比例尺</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线性比例尺"><span class="nav-number">3.1.</span> <span class="nav-text">线性比例尺</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#序数比例尺"><span class="nav-number">3.2.</span> <span class="nav-text">序数比例尺</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标轴"><span class="nav-number">3.3.</span> <span class="nav-text">坐标轴</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态图表"><span class="nav-number">3.4.</span> <span class="nav-text">动态图表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#理解update-、-enter-、-exit"><span class="nav-number">3.5.</span> <span class="nav-text">理解update 、 enter 、 exit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#交互式操作"><span class="nav-number">3.6.</span> <span class="nav-text">交互式操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布局"><span class="nav-number">3.7.</span> <span class="nav-text">布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#饼状图"><span class="nav-number">3.8.</span> <span class="nav-text">饼状图</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章-了解Web及网路基础"><span class="nav-number">1.</span> <span class="nav-text">第一章 了解Web及网路基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-使用HTTP协议访问Web"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 使用HTTP协议访问Web</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-HTTP的诞生"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 HTTP的诞生</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-网络基础TCP-IP"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 网络基础TCP/IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-与HTTP关系密切的协议：-IP-、TCP-、DNS"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 与HTTP关系密切的协议： IP 、TCP 、DNS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章-简单的HTTP协议"><span class="nav-number">2.</span> <span class="nav-text">第二章 简单的HTTP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-HTTP协议用于客户端和服务器端之间的通信"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 HTTP协议用于客户端和服务器端之间的通信</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章-HTTP报文内的HTTP信息"><span class="nav-number">3.</span> <span class="nav-text">第三章 HTTP报文内的HTTP信息</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-HTTP报文"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 HTTP报文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-编码提升传输速率"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 编码提升传输速率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-获取部分内容的范围请求"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 获取部分内容的范围请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-内容协商返回最合适的内容"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 内容协商返回最合适的内容</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章-返回结果的HTTP状态码"><span class="nav-number">4.</span> <span class="nav-text">第四章 返回结果的HTTP状态码</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-状态码告知从服务器端返回的请求结果"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 状态码告知从服务器端返回的请求结果</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第五章-与HTTP协作的Web服务器"><span class="nav-number">5.</span> <span class="nav-text">第五章 与HTTP协作的Web服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-用单台虚拟主机实现多个域名"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 用单台虚拟主机实现多个域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-代理、网关、隧道"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 代理、网关、隧道</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-保存资源的缓存"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 保存资源的缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第六章-HTTP首部"><span class="nav-number">5.4.</span> <span class="nav-text">第六章 HTTP首部</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第七章-确保安全的HTTPS"><span class="nav-number">6.</span> <span class="nav-text">第七章 确保安全的HTTPS</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-HTTP的缺点"><span class="nav-number">6.1.</span> <span class="nav-text">7.1 HTTP的缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-HTTPS-HTTP-加密-认证-完整性保护"><span class="nav-number">6.2.</span> <span class="nav-text">7.2 HTTPS = HTTP + 加密 + 认证 + 完整性保护</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第八章-确认访问用户身份的认证"><span class="nav-number">6.3.</span> <span class="nav-text">第八章  确认访问用户身份的认证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第九章-基于HTTP的功能追加协议"><span class="nav-number">6.4.</span> <span class="nav-text">第九章 基于HTTP的功能追加协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十章-构建Web内容的技术"><span class="nav-number">6.5.</span> <span class="nav-text">第十章 构建Web内容的技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十一章-Web的攻击技术"><span class="nav-number">6.6.</span> <span class="nav-text">第十一章 Web的攻击技术</span></a></li></ol></li></ol></div>
             
 
           </div>
